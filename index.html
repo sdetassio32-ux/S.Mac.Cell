@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#132238">\n<meta name="description" content="Gestão de assistência técnica S.MacCell.">\n<link rel="manifest" href="./manifest.webmanifest">\n<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<title>S.MacCell | Gestão da Assistência</title>
+<style>
+:root{--navy:#132238;--blue:#1677c8;--cyan:#45b8e8;--bg:#f3f6fa;--card:#fff;--ink:#182536;--muted:#718096;--line:#e5ebf2;--green:#16845b;--orange:#c77713;--red:#c13d48}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font:15px/1.45 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink)}
+button,input,select,textarea{font:inherit}button{cursor:pointer}.shell{display:flex;min-height:100vh}.side{width:245px;background:var(--navy);color:#fff;padding:22px 15px;display:flex;flex-direction:column;gap:20px}.brand{display:flex;align-items:center;gap:11px;padding:0 8px}.brandmark{width:42px;height:42px;border-radius:13px;background:#203e5d;display:grid;place-items:center;color:#70d0ff;font-size:22px}.brand b{font-size:21px;letter-spacing:.3px}.brand small{display:block;color:#a9bfd2;font-size:10px;letter-spacing:1px}.nav{display:grid;gap:5px}.nav button{border:0;background:transparent;color:#c8d5e2;text-align:left;padding:11px 13px;border-radius:9px}.nav button.active,.nav button:hover{background:#24415e;color:#fff}.nav .ico{display:inline-block;width:26px}.sidefoot{margin-top:auto;color:#9fb3c7;font-size:12px;padding:10px}.main{flex:1;min-width:0}.top{height:70px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 30px;position:sticky;top:0;z-index:2}.top strong{font-size:16px}.top small{color:var(--muted)}.content{padding:28px;max-width:1400px;margin:auto}.pagehead{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:22px}.pagehead h1{font-size:25px;margin:0 0 4px}.pagehead p{margin:0;color:var(--muted)}.btn{border:0;background:var(--blue);color:white;padding:10px 15px;border-radius:9px;font-weight:600}.btn.secondary{background:#eaf2f9;color:#20577e}.btn.dark{background:var(--navy)}.btn.danger{background:#fff0f0;color:var(--red)}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:20px}.stat,.panel,.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}.stat span{color:var(--muted);font-size:13px}.stat b{display:block;font-size:27px;margin-top:7px}.stat em{font-style:normal;color:var(--blue);font-size:12px}.grid2{display:grid;grid-template-columns:1.35fr 1fr;gap:16px}.panel h3{margin:0 0 15px;font-size:16px}.muted{color:var(--muted)}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:600px}th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);font-size:13px}th{color:var(--muted);font-weight:600;background:#fbfcfe}.tag{display:inline-block;border-radius:20px;padding:4px 9px;font-size:11px;font-weight:650;background:#edf3f8;color:#466078}.tag.green{background:#e7f6ef;color:var(--green)}.tag.orange{background:#fff3df;color:var(--orange)}.tag.red{background:#ffebed;color:var(--red)}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.field{display:grid;gap:5px}.field.full{grid-column:1/-1}.field label{font-size:12px;color:#526276;font-weight:650}.field input,.field select,.field textarea{width:100%;padding:10px 11px;border:1px solid #d8e1ea;border-radius:8px;background:#fff;outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px #1677c81a}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.empty{padding:25px;text-align:center;color:var(--muted)}.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.quick button{padding:15px;text-align:left;background:#f8fbfe;border:1px solid var(--line);border-radius:10px;color:var(--ink)}.quick b{display:block;margin-top:6px}.hidden{display:none!important}.search{max-width:280px;padding:9px 11px;border:1px solid var(--line);border-radius:8px}.notice{padding:12px 14px;background:#fff8e8;border:1px solid #f2dfb3;border-radius:10px;color:#74531b;font-size:13px;margin-bottom:18px}.footer{color:#8b98a8;font-size:11px;text-align:center;margin:25px 0 5px}
+@media(max-width:850px){.side{width:68px;padding:15px 8px}.brand{padding:0 5px}.brand b,.brand small,.nav .txt,.sidefoot{display:none}.brandmark{width:48px}.nav button{text-align:center;padding:12px 5px}.nav .ico{width:auto}.content{padding:18px}.stats{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.top{padding:0 18px}}
+@media(max-width:540px){.top>div:last-child{gap:5px!important}.top .btn{font-size:11px;padding:8px 9px}.side{position:fixed;bottom:0;left:0;right:0;width:auto;height:62px;z-index:5;display:block;padding:5px;background:var(--navy)}.brand,.sidefoot{display:none}.nav{display:flex;justify-content:space-around}.nav button{font-size:10px;padding:7px 4px;display:grid;gap:1px;justify-items:center}.nav .ico{font-size:17px}.nav .txt{display:block}.top{height:58px}.content{padding:15px 12px 82px}.pagehead{align-items:flex-start;flex-direction:column}.pagehead h1{font-size:22px}.stats{gap:9px}.stat{padding:13px}.stat b{font-size:22px}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.quick{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="side">
+ <div class="brand"><div class="brandmark">⌁</div><div><b>S.MacCell</b><small>GESTÃO TÉCNICA</small></div></div>
+ <nav class="nav" id="nav">
+  <button class="active" data-page="dashboard"><span class="ico">▦</span><span class="txt">Painel</span></button>
+  <button data-page="os"><span class="ico">🛠</span><span class="txt">Ordens de serviço</span></button>
+  <button data-page="clients"><span class="ico">♙</span><span class="txt">Clientes</span></button>
+  <button data-page="devices"><span class="ico">📱</span><span class="txt">Aparelhos</span></button>
+  <button data-page="stock"><span class="ico">▤</span><span class="txt">Estoque</span></button>
+  <button data-page="finance"><span class="ico">＄</span><span class="txt">Financeiro</span></button>
+  <button data-page="sales"><span class="ico">▣</span><span class="txt">Vendas</span></button>
+  <button data-page="warranty"><span class="ico">✓</span><span class="txt">Garantias</span></button>
+  <button data-page="reports"><span class="ico">▥</span><span class="txt">Relatórios</span></button>
+ </nav>
+ <div class="sidefoot">S.MacCell • Versão inicial</div>
+</aside>
+<main class="main">
+ <header class="top"><div><strong id="topTitle">Painel geral</strong><br><small>Gestão da sua assistência técnica</small></div><div style="display:flex;gap:8px;align-items:center"><button class="btn secondary" id="installBtn" type="button" style="display:none">＋ Instalar</button><button class="btn secondary" id="qrBtn" type="button">▦ QR de acesso</button><button class="btn secondary" id="backupBtn">⇩ Backup</button></div></header>
+ <div class="content">
+  <section id="dashboard" class="page">
+   <div class="pagehead"><div><h1>Bom trabalho! 👋</h1><p>Acompanhe o movimento da S.MacCell.</p></div><button class="btn" onclick="showPage('os');document.getElementById('osForm').scrollIntoView({behavior:'smooth'})">＋ Nova ordem de serviço</button></div>
+   <div class="notice"><b>Modo local:</b> os dados ficam salvos neste navegador e não sincronizam entre aparelhos. Para uso com funcionários, logins e histórico compartilhado, é necessário publicar e conectar um servidor seguro.</div>
+   <div class="stats">
+    <div class="stat"><span>OS cadastradas</span><b id="statOS">0</b><em>Histórico total</em></div>
+    <div class="stat"><span>Em andamento</span><b id="statOpen">0</b><em>Precisam de acompanhamento</em></div>
+    <div class="stat"><span>Clientes</span><b id="statClients">0</b><em>Base cadastrada</em></div>
+    <div class="stat"><span>Receita registrada</span><b id="statRevenue">R$ 0,00</b><em>Vendas e serviços pagos</em></div>
+   </div>
+   <div class="grid2">
+    <div class="panel"><h3>Ordens recentes</h3><div class="tablewrap"><table><thead><tr><th>Nº OS</th><th>Cliente</th><th>Aparelho</th><th>Status</th></tr></thead><tbody id="recentOS"></tbody></table></div></div>
+    <div class="panel"><h3>Acesso rápido</h3><div class="quick">
+     <button onclick="showPage('os')">＋<b>Nova OS</b><small class="muted">Registrar reparo</small></button>
+     <button onclick="showPage('clients')">♙<b>Cliente</b><small class="muted">Cadastrar cliente</small></button>
+     <button onclick="showPage('stock')">▤<b>Produto</b><small class="muted">Adicionar estoque</small></button>
+    </div></div>
+   </div>
+  </section>
+  <section id="devices" class="page hidden">
+   <div class="pagehead"><div><h1>Cadastro de aparelhos</h1><p>Catálogo por marca, linha e modelo, com histórico individual de cada aparelho.</p></div></div>
+   <div class="notice"><b>Importante:</b> o histórico é vinculado ao aparelho físico por IMEI ou número de série quando informado. Sem identificador único, o sistema não deve presumir que dois aparelhos do mesmo modelo sejam o mesmo aparelho.</div>
+   <div class="panel"><h3>Cadastrar aparelho</h3><form id="formDevice"><div class="formgrid">
+    <div class="field"><label>Cliente proprietário *</label><select name="clientId" id="deviceClient" required></select></div>
+    <div class="field"><label>Marca *</label><select name="brand" id="deviceBrand" required><option value="">Selecione</option><option>Samsung</option><option>Apple</option><option>Motorola</option><option>Xiaomi</option><option>Redmi</option><option>POCO</option><option>Realme</option><option>Outra</option></select></div>
+    <div class="field"><label>Linha *</label><select name="line" id="deviceLine" required><option value="">Selecione a marca primeiro</option></select></div>
+    <div class="field"><label>Modelo *</label><select name="model" id="deviceModel" required><option value="">Selecione a linha primeiro</option></select></div>
+    <div class="field"><label>IMEI ou número de série</label><input name="serial" placeholder="Identificador único, se disponível"></div>
+    <div class="field"><label>Cor / observação de identificação</label><input name="details" placeholder="Ex.: preto, 128 GB, tela trincada"></div>
+   </div><div class="actions"><button class="btn" type="submit">Cadastrar aparelho</button></div></form></div>
+   <div class="panel" style="margin-top:16px"><div class="pagehead"><div><h3>Aparelhos cadastrados</h3></div><input class="search" id="deviceSearch" placeholder="Buscar marca, modelo, IMEI ou cliente"></div><div class="tablewrap"><table><thead><tr><th>Cliente</th><th>Marca / linha / modelo</th><th>Identificação</th><th>Atendimentos</th><th>Histórico</th></tr></thead><tbody id="deviceRows"></tbody></table></div></div>
+   <div class="panel hidden" id="deviceHistory" style="margin-top:16px"><h3 id="historyTitle">Histórico do aparelho</h3><div id="historyBody"></div></div>
+  </section>
+  <section id="os" class="page hidden">
+   <div class="pagehead"><div><h1>Ordens de serviço</h1><p>Registre, acompanhe e finalize os reparos.</p></div></div>
+   <div class="panel" id="osForm"><h3>Nova ordem de serviço</h3>
+    <form id="formOS"><div class="formgrid">
+     <div class="field"><label>Cliente *</label><input name="client" required placeholder="Nome do cliente"></div>
+     <div class="field"><label>Telefone</label><input name="phone" placeholder="(00) 00000-0000"></div>
+     <div class="field"><label>Aparelho cadastrado</label><select name="deviceId" id="osDevice"><option value="">Não vincular / cadastrar depois</option></select></div>
+     <div class="field"><label>Marca e modelo *</label><input name="device" required placeholder="Ex.: iPhone 11, Galaxy A15"></div>
+     <div class="field"><label>IMEI / identificação (opcional)</label><input name="imei" placeholder="Evite registrar dados desnecessários"></div>
+     <div class="field full"><label>Observações técnicas / serviço realizado</label><textarea name="notes" rows="2" placeholder="Testes realizados, peça trocada, medições e resultado"></textarea></div>
+     <div class="field full"><label>Defeito relatado *</label><textarea name="problem" required rows="2" placeholder="Descreva o problema informado pelo cliente"></textarea></div>
+     <div class="field"><label>Diagnóstico</label><input name="diagnosis" placeholder="Diagnóstico técnico"></div>
+     <div class="field"><label>Status</label><select name="status"><option>Aguardando diagnóstico</option><option>Aguardando aprovação</option><option>Aguardando peça</option><option>Em reparo</option><option>Concluído</option><option>Entregue</option><option>Sem reparo</option></select></div>
+     <div class="field"><label>Valor do serviço (R$)</label><input name="price" type="number" min="0" step=".01" placeholder="0,00"></div>
+     <div class="field"><label>Data de entrada</label><input name="date" type="date"></div>
+    </div><div class="actions"><button class="btn" type="submit">Salvar ordem de serviço</button></div></form>
+   </div>
+   <div class="panel" style="margin-top:16px"><div class="pagehead"><div><h3>Ordens cadastradas</h3></div><input class="search" id="osSearch" placeholder="Buscar cliente ou aparelho..."></div><div class="tablewrap"><table><thead><tr><th>OS</th><th>Data</th><th>Cliente</th><th>Aparelho</th><th>Defeito</th><th>Valor</th><th>Status</th><th>Ação</th></tr></thead><tbody id="osRows"></tbody></table></div></div>
+  </section>
+  <section id="clients" class="page hidden">
+   <div class="pagehead"><div><h1>Clientes</h1><p>Cadastro e histórico dos seus clientes.</p></div></div>
+   <div class="panel"><h3>Novo cliente</h3><form id="formClient"><div class="formgrid"><div class="field"><label>Nome *</label><input name="name" required></div><div class="field"><label>Telefone</label><input name="phone"></div><div class="field"><label>E-mail</label><input name="email" type="email"></div><div class="field"><label>Observações</label><input name="notes"></div></div><div class="actions"><button class="btn">Cadastrar cliente</button></div></form></div>
+   <div class="panel" style="margin-top:16px"><h3>Clientes cadastrados</h3><div class="tablewrap"><table><thead><tr><th>Nome</th><th>Telefone</th><th>E-mail</th><th>OS registradas</th></tr></thead><tbody id="clientRows"></tbody></table></div></div>
+  </section>
+  <section id="stock" class="page hidden">
+   <div class="pagehead"><div><h1>Estoque</h1><p>Controle de peças, componentes e acessórios.</p></div></div>
+   <div class="panel"><h3>Adicionar item</h3><form id="formStock"><div class="formgrid"><div class="field"><label>Produto / peça *</label><input name="name" required placeholder="Ex.: Conector de carga iPhone 11"></div><div class="field"><label>Categoria</label><select name="category"><option>Peça</option><option>Componente</option><option>Acessório</option><option>Ferramenta</option><option>Outro</option></select></div><div class="field"><label>Quantidade</label><input name="qty" type="number" min="0" value="1"></div><div class="field"><label>Custo unitário (R$)</label><input name="cost" type="number" min="0" step=".01" value="0"></div><div class="field"><label>Preço de venda (R$)</label><input name="price" type="number" min="0" step=".01" value="0"></div></div><div class="actions"><button class="btn">Adicionar ao estoque</button></div></form></div>
+   <div class="panel" style="margin-top:16px"><h3>Itens em estoque</h3><div class="tablewrap"><table><thead><tr><th>Produto</th><th>Categoria</th><th>Qtd.</th><th>Custo</th><th>Venda</th><th>Ação</th></tr></thead><tbody id="stockRows"></tbody></table></div></div>
+  </section>
+  <section id="finance" class="page hidden">
+   <div class="pagehead"><div><h1>Financeiro</h1><p>Registre entradas e despesas para acompanhar o resultado.</p></div></div>
+   <div class="stats"><div class="stat"><span>Entradas</span><b id="finIn">R$ 0,00</b></div><div class="stat"><span>Despesas</span><b id="finOut">R$ 0,00</b></div><div class="stat"><span>Saldo registrado</span><b id="finBalance">R$ 0,00</b></div><div class="stat"><span>Lançamentos</span><b id="finCount">0</b></div></div>
+   <div class="panel"><h3>Novo lançamento</h3><form id="formFinance"><div class="formgrid"><div class="field"><label>Descrição *</label><input name="description" required placeholder="Ex.: Troca de conector / compra de tela"></div><div class="field"><label>Tipo</label><select name="type"><option value="in">Entrada</option><option value="out">Despesa</option></select></div><div class="field"><label>Valor (R$) *</label><input name="value" type="number" min=".01" step=".01" required></div><div class="field"><label>Data</label><input name="date" type="date"></div></div><div class="actions"><button class="btn">Registrar lançamento</button></div></form></div>
+   <div class="panel" style="margin-top:16px"><h3>Movimentações</h3><div class="tablewrap"><table><thead><tr><th>Data</th><th>Descrição</th><th>Tipo</th><th>Valor</th></tr></thead><tbody id="financeRows"></tbody></table></div></div>
+  </section>
+  <section id="sales" class="page hidden">
+   <div class="pagehead"><div><h1>Vendas</h1><p>Registre aparelhos recondicionados e acessórios vendidos.</p></div></div>
+   <div class="panel"><h3>Registrar venda</h3><form id="formSale"><div class="formgrid"><div class="field"><label>Produto / aparelho *</label><input name="product" required placeholder="Ex.: Redmi Note 12 128 GB"></div><div class="field"><label>Cliente</label><input name="client" placeholder="Nome do comprador"></div><div class="field"><label>Custo total (R$)</label><input name="cost" type="number" min="0" step=".01" value="0"></div><div class="field"><label>Preço de venda (R$) *</label><input name="price" type="number" min=".01" step=".01" required></div><div class="field"><label>Data</label><input name="date" type="date"></div><div class="field"><label>Garantia (dias)</label><input name="warranty" type="number" min="0" value="90"></div></div><div class="actions"><button class="btn">Salvar venda</button></div></form></div>
+   <div class="panel" style="margin-top:16px"><h3>Vendas registradas</h3><div class="tablewrap"><table><thead><tr><th>Data</th><th>Produto</th><th>Cliente</th><th>Custo</th><th>Venda</th><th>Lucro bruto</th></tr></thead><tbody id="salesRows"></tbody></table></div></div>
+  </section>
+  <section id="warranty" class="page hidden">
+   <div class="pagehead"><div><h1>Garantias</h1><p>Acompanhe a cobertura dos aparelhos vendidos.</p></div></div>
+   <div class="panel"><h3>Garantias cadastradas</h3><div class="tablewrap"><table><thead><tr><th>Produto</th><th>Cliente</th><th>Venda</th><th>Prazo</th><th>Validade</th><th>Situação</th></tr></thead><tbody id="warrantyRows"></tbody></table></div></div>
+  </section>
+  <section id="reports" class="page hidden">
+   <div class="pagehead"><div><h1>Relatórios</h1><p>Visão resumida dos dados registrados no sistema.</p></div><button class="btn secondary" onclick="exportCSV()">Exportar OS CSV</button></div>
+   <div class="stats"><div class="stat"><span>Serviços concluídos</span><b id="repDone">0</b></div><div class="stat"><span>Vendas</span><b id="repSales">0</b></div><div class="stat"><span>Lucro bruto em vendas</span><b id="repProfit">R$ 0,00</b></div><div class="stat"><span>Itens cadastrados</span><b id="repItems">0</b></div></div>
+   <div class="panel"><h3>Resumo</h3><p class="muted">Os relatórios refletem somente os lançamentos cadastrados nesta versão. Para apuração contábil, confira os valores e documentos fiscais.</p><div class="actions"><button class="btn" onclick="downloadBackup()">Baixar backup completo (JSON)</button><button class="btn secondary" onclick="document.getElementById('restoreFile').click()">Restaurar backup</button><input id="restoreFile" type="file" accept="application/json" class="hidden"></div></div>
+  </section>
+  <div class="footer">S.MacCell • Pacote PWA preparado para publicação • Dados locais até a integração com servidor.</div>
+ </div>
+</main>
+</div>
+<div id="qrModal" class="hidden" style="position:fixed;inset:0;background:#081421b8;z-index:20;display:grid;place-items:center;padding:18px">
+ <div style="background:white;border-radius:16px;padding:22px;max-width:390px;width:100%;text-align:center;box-shadow:0 20px 60px #0004">
+  <h2 style="margin:0 0 8px">Acesso pelo celular</h2>
+  <p id="qrHelp" class="muted" style="font-size:13px">Use a câmera do celular para abrir o S.MacCell.</p>
+  <img id="qrImage" alt="QR Code de acesso ao S.MacCell" style="width:220px;height:220px;max-width:100%;object-fit:contain;display:none;margin:12px auto">
+  <p id="qrUrl" style="font-size:11px;overflow-wrap:anywhere;color:#526276"></p>
+  <button class="btn" type="button" id="qrClose">Fechar</button>
+ </div>
+</div>
+<script>
+const KEY='smaccell_v2';
+const OLD_KEY='smaccell_v1';
+let db=JSON.parse(localStorage.getItem(KEY)||localStorage.getItem(OLD_KEY)||'{"os":[],"clients":[],"stock":[],"finance":[],"sales":[],"devices":[]}');
+db.devices=db.devices||[]; db.os=db.os||[]; db.clients=db.clients||[]; db.stock=db.stock||[]; db.finance=db.finance||[]; db.sales=db.sales||[];
+db.clients.forEach((c,i)=>{if(!c.id)c.id='cli_legacy_'+i+'_'+Date.now()});
+const $=id=>document.getElementById(id);
+const money=n=>(Number(n)||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const today=()=>new Date().toISOString().slice(0,10);
+function save(){localStorage.setItem(KEY,JSON.stringify(db));render()}
+try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function empty(msg){return `<tr><td colspan="10" class="empty">${msg}</td></tr>`}
+function statusTag(s){let c=['Concluído','Entregue'].includes(s)?'green':['Aguardando peça','Aguardando aprovação'].includes(s)?'orange':s==='Sem reparo'?'red':'';return `<span class="tag ${c}">${esc(s)}</span>`}
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));$(id).classList.remove('hidden');document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));$('topTitle').textContent=({dashboard:'Painel geral',os:'Ordens de serviço',clients:'Clientes',stock:'Estoque',finance:'Financeiro',sales:'Vendas',warranty:'Garantias',reports:'Relatórios',devices:'Aparelhos'})[id];render()}
+$('nav').addEventListener('click',e=>{const b=e.target.closest('button[data-page]');if(b)showPage(b.dataset.page)});
+function render(){
+ $('statOS').textContent=db.os.length;$('statOpen').textContent=db.os.filter(x=>!['Entregue','Sem reparo'].includes(x.status)).length;$('statClients').textContent=db.clients.length;
+ const paid=db.finance.filter(x=>x.type==='in').reduce((a,x)=>a+x.value,0);$('statRevenue').textContent=money(paid);
+ $('recentOS').innerHTML=db.os.slice(-5).reverse().map(x=>`<tr><td>#${x.id}</td><td>${esc(x.client)}</td><td>${esc(x.device)}</td><td>${statusTag(x.status)}</td></tr>`).join('')||empty('Nenhuma OS cadastrada.');
+ const q=($('osSearch')?.value||'').toLowerCase();
+ $('osRows').innerHTML=db.os.filter(x=>(x.client+x.device+x.problem).toLowerCase().includes(q)).slice().reverse().map(x=>`<tr><td>#${x.id}</td><td>${esc(x.date)}</td><td>${esc(x.client)}</td><td>${esc(x.device)}</td><td>${esc(x.problem)}</td><td>${money(x.price)}</td><td><select aria-label="Alterar status" onchange="updateOS(${x.id},this.value)">${['Aguardando diagnóstico','Aguardando aprovação','Aguardando peça','Em reparo','Concluído','Entregue','Sem reparo'].map(s=>`<option ${x.status===s?'selected':''}>${s}</option>`).join('')}</select></td><td><button class="btn secondary" onclick="printOS(${x.id})">Imprimir</button></td></tr>`).join('')||empty('Nenhuma ordem cadastrada.');
+ $('clientRows').innerHTML=db.clients.slice().reverse().map(c=>`<tr><td>${esc(c.name)}</td><td>${esc(c.phone)}</td><td>${esc(c.email)}</td><td>${db.os.filter(o=>o.client.toLowerCase()===c.name.toLowerCase()).length}</td></tr>`).join('')||empty('Nenhum cliente cadastrado.');
+ $('osDevice').innerHTML='<option value="">Não vincular / cadastrar depois</option>'+db.devices.map(d=>`<option value="${d.id}">${esc(d.brand)} ${esc(d.model)} — ${esc(db.clients.find(c=>c.id===d.clientId)?.name||'')}</option>`).join('');
+ $('deviceClient').innerHTML='<option value="">Selecione o cliente</option>'+db.clients.map(c=>`<option value="${c.id}">${esc(c.name)}</option>`).join('');
+ const dq=($('deviceSearch')?.value||'').toLowerCase();
+ $('deviceRows').innerHTML=db.devices.filter(d=>(d.brand+' '+d.line+' '+d.model+' '+d.serial+' '+(db.clients.find(c=>c.id===d.clientId)?.name||'')).toLowerCase().includes(dq)).map(d=>{const count=db.os.filter(o=>o.deviceId===d.id).length;return `<tr><td>${esc(db.clients.find(c=>c.id===d.clientId)?.name||'Cliente não encontrado')}</td><td>${esc(d.brand)} / ${esc(d.line)} / ${esc(d.model)}</td><td>${esc(d.serial||'Não informado')}</td><td>${count}</td><td><button class="btn secondary" onclick="showDeviceHistory('${d.id}')">Ver histórico</button></td></tr>`}).join('')||empty('Nenhum aparelho cadastrado.');
+ $('stockRows').innerHTML=db.stock.slice().reverse().map((x,i)=>`<tr><td>${esc(x.name)}</td><td>${esc(x.category)}</td><td>${x.qty}</td><td>${money(x.cost)}</td><td>${money(x.price)}</td><td><button class="btn danger" onclick="removeStock(${db.stock.length-1-i})">Excluir</button></td></tr>`).join('')||empty('Estoque vazio.');
+ const ins=db.finance.filter(x=>x.type==='in').reduce((a,x)=>a+x.value,0),outs=db.finance.filter(x=>x.type==='out').reduce((a,x)=>a+x.value,0);
+ $('finIn').textContent=money(ins);$('finOut').textContent=money(outs);$('finBalance').textContent=money(ins-outs);$('finCount').textContent=db.finance.length;
+ $('financeRows').innerHTML=db.finance.slice().reverse().map(x=>`<tr><td>${esc(x.date)}</td><td>${esc(x.description)}</td><td>${x.type==='in'?'Entrada':'Despesa'}</td><td>${money(x.value)}</td></tr>`).join('')||empty('Nenhum lançamento.');
+ $('salesRows').innerHTML=db.sales.slice().reverse().map(x=>`<tr><td>${esc(x.date)}</td><td>${esc(x.product)}</td><td>${esc(x.client)}</td><td>${money(x.cost)}</td><td>${money(x.price)}</td><td>${money(x.price-x.cost)}</td></tr>`).join('')||empty('Nenhuma venda cadastrada.');
+ $('warrantyRows').innerHTML=db.sales.filter(x=>x.warranty>0).slice().reverse().map(x=>{let end=new Date(x.date+'T12:00:00');end.setDate(end.getDate()+Number(x.warranty));let valid=end>=new Date(today()+'T00:00:00');return `<tr><td>${esc(x.product)}</td><td>${esc(x.client)}</td><td>${esc(x.date)}</td><td>${x.warranty} dias</td><td>${end.toLocaleDateString('pt-BR')}</td><td><span class="tag ${valid?'green':'red'}">${valid?'Dentro do prazo':'Expirada'}</span></td></tr>`}).join('')||empty('Nenhuma garantia cadastrada.');
+ $('repDone').textContent=db.os.filter(x=>['Concluído','Entregue'].includes(x.status)).length;$('repSales').textContent=db.sales.length;$('repProfit').textContent=money(db.sales.reduce((a,x)=>a+x.price-x.cost,0));$('repItems').textContent=db.stock.length;
+}
+const catalog={
+ Samsung:{'Galaxy A':['A04','A04e','A05','A05s','A06','A12','A13','A14','A15','A16','A22','A23','A24','A25','A32','A33','A34','A35','A52','A53','A54','A55','A56'],'Galaxy S':['S20','S20 FE','S21','S21 FE','S22','S23','S23 FE','S24','S24 FE','S25','S25 FE'],'Galaxy M':['M12','M13','M14','M15','M23','M32','M34','M35','M54','M55'],'Galaxy Z':['Z Flip 4','Z Flip 5','Z Flip 6','Z Fold 4','Z Fold 5','Z Fold 6']},
+ Apple:{'iPhone':['iPhone 8','iPhone X','iPhone XR','iPhone XS','iPhone XS Max','iPhone 11','iPhone 11 Pro','iPhone 11 Pro Max','iPhone 12','iPhone 12 mini','iPhone 12 Pro','iPhone 12 Pro Max','iPhone 13','iPhone 13 mini','iPhone 13 Pro','iPhone 13 Pro Max','iPhone 14','iPhone 14 Plus','iPhone 14 Pro','iPhone 14 Pro Max','iPhone 15','iPhone 15 Plus','iPhone 15 Pro','iPhone 15 Pro Max','iPhone 16','iPhone 16 Plus','iPhone 16 Pro','iPhone 16 Pro Max','iPhone 17','iPhone 17 Pro','iPhone 17 Pro Max']},
+ Motorola:{'Moto G':['Moto G14','Moto G15','Moto G24','Moto G34','Moto G54','Moto G55','Moto G84','Moto G85'],'Moto Edge':['Edge 30','Edge 40','Edge 50','Edge 50 Fusion','Edge 50 Pro','Edge 60']},
+ Xiaomi:{'Xiaomi':['Xiaomi 12','Xiaomi 13','Xiaomi 14','Xiaomi 15']}, Redmi:{'Redmi Note':['Note 10','Note 11','Note 12','Note 13','Note 14'],'Redmi':['Redmi 12','Redmi 13','Redmi 14C']}, POCO:{'POCO':['X5','X6','X6 Pro','X7','M5','M6','M7','F5','F6','F7']}, Realme:{'Realme C':['C53','C55','C61','C63','C65','C75'],'Realme':['11','12','13','14']}, Outra:{'Outra linha':['Modelo não listado']}
+};
+function fillSelect(el,items,placeholder){el.innerHTML=`<option value="">${placeholder}</option>`+items.map(x=>`<option>${esc(x)}</option>`).join('')}
+$('deviceBrand').addEventListener('change',()=>{fillSelect($('deviceLine'),Object.keys(catalog[$('deviceBrand').value]||{}),'Selecione a linha');fillSelect($('deviceModel'),[],'Selecione a linha primeiro')});
+$('deviceLine').addEventListener('change',()=>fillSelect($('deviceModel'),(catalog[$('deviceBrand').value]||{})[$('deviceLine').value]||[],'Selecione o modelo'));
+$('formDevice').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target);const serial=String(f.get('serial')||'').trim();if(serial&&db.devices.some(d=>d.serial&&d.serial.toLowerCase()===serial.toLowerCase())){alert('Já existe um aparelho cadastrado com esse IMEI/série. Consulte o histórico existente.');return}db.devices.push({id:'dev_'+Date.now(),clientId:f.get('clientId'),brand:f.get('brand'),line:f.get('line'),model:f.get('model'),serial,details:f.get('details'),createdAt:today()});save();e.target.reset();fillSelect($('deviceLine'),[],'Selecione a marca primeiro');fillSelect($('deviceModel'),[],'Selecione a linha primeiro');alert('Aparelho cadastrado!');});
+$('osDevice').addEventListener('change',()=>{const d=db.devices.find(x=>x.id===$('osDevice').value);if(d){const c=db.clients.find(x=>x.id===d.clientId);$('formOS').elements.client.value=c?.name||'';$('formOS').elements.phone.value=c?.phone||'';$('formOS').elements.device.value=`${d.brand} ${d.line} ${d.model}`;$('formOS').elements.imei.value=d.serial||'';}});
+$('deviceSearch').addEventListener('input',render);
+function showDeviceHistory(id){const d=db.devices.find(x=>x.id===id);if(!d)return;const os=db.os.filter(x=>x.deviceId===id).sort((a,b)=>(b.date||'').localeCompare(a.date||''));$('deviceHistory').classList.remove('hidden');$('historyTitle').textContent=`Histórico — ${d.brand} ${d.line} ${d.model}`;$('historyBody').innerHTML=`<p><b>Cliente:</b> ${esc(db.clients.find(c=>c.id===d.clientId)?.name||'—')} · <b>IMEI/série:</b> ${esc(d.serial||'Não informado')} · <b>Identificação:</b> ${esc(d.details||'—')}</p>`+(os.length?os.map(o=>`<div style="border:1px solid var(--line);border-radius:10px;padding:13px;margin:10px 0"><b>OS #${o.id}</b> · ${esc(o.date)} · ${statusTag(o.status)}<p><b>Relato:</b> ${esc(o.problem)}</p><p><b>Diagnóstico:</b> ${esc(o.diagnosis||'Ainda não informado')}</p><p><b>Serviço / observações:</b> ${esc(o.notes||'Não informado')}</p><p><b>Valor:</b> ${money(o.price)}</p></div>`).join(''):'<p class="muted">Este aparelho ainda não possui atendimentos registrados.</p>');$('deviceHistory').scrollIntoView({behavior:'smooth',block:'start'})}
+function updateOS(id,status){const x=db.os.find(x=>x.id===id);if(x){x.status=status;save()}}
+function removeStock(i){if(confirm('Excluir este item do estoque?')){db.stock.splice(i,1);save()}}
+$('formOS').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target);db.os.push({id:Date.now(),client:f.get('client'),phone:f.get('phone'),device:f.get('device'),deviceId:f.get('deviceId'),imei:f.get('imei'),problem:f.get('problem'),diagnosis:f.get('diagnosis'),notes:f.get('notes'),status:f.get('status'),price:Number(f.get('price')||0),date:f.get('date')||today()});save();e.target.reset();alert('Ordem de serviço salva!')});
+$('formClient').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target);db.clients.push({id:'cli_'+Date.now(),name:f.get('name'),phone:f.get('phone'),email:f.get('email'),notes:f.get('notes')});save();e.target.reset();alert('Cliente cadastrado!')});
+$('formStock').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target);db.stock.push({name:f.get('name'),category:f.get('category'),qty:Number(f.get('qty')),cost:Number(f.get('cost')),price:Number(f.get('price'))});save();e.target.reset();alert('Item adicionado ao estoque!')});
+$('formFinance').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target);db.finance.push({description:f.get('description'),type:f.get('type'),value:Number(f.get('value')),date:f.get('date')||today()});save();e.target.reset();alert('Lançamento registrado!')});
+$('formSale').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target);db.sales.push({product:f.get('product'),client:f.get('client'),cost:Number(f.get('cost')),price:Number(f.get('price')),date:f.get('date')||today(),warranty:Number(f.get('warranty'))});save();e.target.reset();alert('Venda registrada!')});
+$('osSearch').addEventListener('input',render);
+function downloadBackup(){const blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='smaccell-backup-'+today()+'.json';a.click();URL.revokeObjectURL(a.href)}
+$('backupBtn').onclick=downloadBackup;
+$('restoreFile').addEventListener('change',async e=>{const file=e.target.files[0];if(!file)return;try{const data=JSON.parse(await file.text());if(!data.os||!data.clients||!data.stock||!data.finance||!data.sales)throw Error();if(confirm('Restaurar backup? Os dados atuais deste navegador serão substituídos.')){db=data;save();alert('Backup restaurado.')}}catch{alert('Arquivo de backup inválido.')}e.target.value=''});
+function exportCSV(){const rows=[['OS','Data','Cliente','Telefone','Aparelho','Defeito','Diagnóstico','Status','Valor'],...db.os.map(x=>[x.id,x.date,x.client,x.phone,x.device,x.problem,x.diagnosis,x.status,x.price])];const csv=rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')).join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'}));a.download='smaccell-ordens.csv';a.click();URL.revokeObjectURL(a.href)}
+function printOS(id){const x=db.os.find(x=>x.id===id);const w=window.open('','_blank');w.document.write(`<html><meta charset="utf-8"><title>OS ${id}</title><body style="font:14px Arial;padding:30px"><h1>S.MacCell</h1><h2>Ordem de Serviço #${id}</h2><p><b>Data:</b> ${esc(x.date)}</p><p><b>Cliente:</b> ${esc(x.client)} — ${esc(x.phone)}</p><p><b>Aparelho:</b> ${esc(x.device)}</p><p><b>Identificação:</b> ${esc(x.imei||'Não informada')}</p><p><b>Defeito relatado:</b> ${esc(x.problem)}</p><p><b>Diagnóstico:</b> ${esc(x.diagnosis)}</p><p><b>Status:</b> ${esc(x.status)}</p><h3>Valor: ${money(x.price)}</h3><hr><p>Assinatura do cliente: __________________________________</p><p style="font-size:11px;color:#555">Documento de controle interno. Preencha os termos de garantia e autorização conforme a legislação aplicável.</p><script>window.print()<\/script></body></html>`);w.document.close()}
+render();
+
+$('qrBtn').addEventListener('click',()=>{
+ const modal=$('qrModal'), img=$('qrImage'), help=$('qrHelp'), url=$('qrUrl');
+ modal.classList.remove('hidden');
+ if(location.protocol==='https:'||location.protocol==='http:'){
+   const target=location.href.split('#')[0];
+   img.src='https://api.qrserver.com/v1/create-qr-code/?size=240x240&data='+encodeURIComponent(target);
+   img.style.display='block'; help.textContent='Escaneie este código com a câmera do celular. Os dois aparelhos precisam acessar o endereço publicado do sistema.'; url.textContent=target;
+ }else{
+   img.style.display='none'; help.textContent='O QR Code só poderá ser criado depois que o S.MacCell estiver publicado em um endereço HTTPS. Abrir este arquivo diretamente no computador não cria um endereço acessível pelo celular.'; url.textContent='Aguardando publicação em HTTPS.';
+ }
+});
+$('qrClose').addEventListener('click',()=>$('qrModal').classList.add('hidden'));
+$('qrModal').addEventListener('click',e=>{if(e.target===$('qrModal'))$('qrModal').classList.add('hidden')});
+
+let installPrompt=null;
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;$('installBtn').style.display='inline-block'});
+$('installBtn').addEventListener('click',async()=>{if(!installPrompt){alert('Abra o S.MacCell pelo navegador e use o menu “Adicionar à tela inicial”.');return}installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;$('installBtn').style.display='none'});
+if('serviceWorker' in navigator && (location.protocol==='https:'||location.hostname==='localhost')){
+ window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+}
+</script>
+</body></html>

@@ -1,0 +1,24 @@
+S.MacCell - pacote preparado para publicação
+
+CONTEÚDO
+- index.html: aplicativo web atual, com módulos de gestão, catálogo e histórico local.
+- manifest.webmanifest, icon.svg e sw.js: base para instalação como aplicativo (PWA).
+
+IMPORTANTE
+1. Este pacote ainda NÃO possui banco de dados online, login multiusuário, permissões reais ou sincronização entre dispositivos.
+2. Os dados atuais são salvos no armazenamento local do navegador. Use o backup JSON regularmente.
+3. O QR Code dentro do sistema só gera um endereço útil depois da publicação em HTTPS.
+4. Não coloque dados reais sensíveis de clientes neste protótipo compartilhado/local.
+
+PUBLICAÇÃO
+- Hospede o conteúdo desta pasta em um serviço de hospedagem HTTPS (por exemplo, hospedagem estática).
+- Depois de publicado, abra o endereço HTTPS no computador. Use “QR de acesso” e escaneie com o celular.
+- No celular, use “Instalar” ou o menu do navegador > “Adicionar à tela inicial”.
+
+PRÓXIMA ETAPA PARA PRODUÇÃO
+- Configurar banco de dados remoto e autenticação.
+- Criar perfis de administrador, técnico, atendente e financeiro.
+- Regras de acesso por função e por empresa.
+- Registro de auditoria de alterações.
+- Backup automático, política de retenção e recuperação.
+- Testes de segurança e privacidade antes de cadastrar clientes.

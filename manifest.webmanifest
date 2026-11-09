@@ -1,0 +1,18 @@
+{
+  "name": "S.MacCell - Gestão Técnica",
+  "short_name": "S.MacCell",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f6fa",
+  "theme_color": "#132238",
+  "description": "Sistema de gestão para assistência técnica.",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
